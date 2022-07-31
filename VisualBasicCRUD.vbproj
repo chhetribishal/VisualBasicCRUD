@@ -4,7 +4,7 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>VisualBasicCRUD</RootNamespace>
-    <StartupObject>Sub Main</StartupObject>
+    <StartupObject>VisualBasicCRUD.Patient</StartupObject>
     <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 

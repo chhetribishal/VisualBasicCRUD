@@ -23,10 +23,10 @@ Partial Class Patient
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Button6 = New System.Windows.Forms.Button()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Search = New System.Windows.Forms.Button()
+        Me.Drop = New System.Windows.Forms.Button()
+        Me.Delete = New System.Windows.Forms.Button()
+        Me.Update = New System.Windows.Forms.Button()
         Me.Insert = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.txtSearch = New System.Windows.Forms.TextBox()
@@ -37,15 +37,18 @@ Partial Class Patient
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.GroupBox1.SuspendLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.Button6)
-        Me.GroupBox1.Controls.Add(Me.Button5)
-        Me.GroupBox1.Controls.Add(Me.Button4)
-        Me.GroupBox1.Controls.Add(Me.Button3)
+        Me.GroupBox1.Controls.Add(Me.Search)
+        Me.GroupBox1.Controls.Add(Me.Drop)
+        Me.GroupBox1.Controls.Add(Me.Delete)
+        Me.GroupBox1.Controls.Add(Me.Update)
         Me.GroupBox1.Controls.Add(Me.Insert)
         Me.GroupBox1.Controls.Add(Me.Button1)
         Me.GroupBox1.Controls.Add(Me.txtSearch)
@@ -63,41 +66,41 @@ Partial Class Patient
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "PatientDetails"
         '
-        'Button6
+        'Search
         '
-        Me.Button6.Location = New System.Drawing.Point(426, 236)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(72, 29)
-        Me.Button6.TabIndex = 13
-        Me.Button6.Text = "Search"
-        Me.Button6.UseVisualStyleBackColor = True
+        Me.Search.Location = New System.Drawing.Point(426, 236)
+        Me.Search.Name = "Search"
+        Me.Search.Size = New System.Drawing.Size(72, 29)
+        Me.Search.TabIndex = 13
+        Me.Search.Text = "Search"
+        Me.Search.UseVisualStyleBackColor = True
         '
-        'Button5
+        'Drop
         '
-        Me.Button5.Location = New System.Drawing.Point(484, 307)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(94, 29)
-        Me.Button5.TabIndex = 12
-        Me.Button5.Text = "Drop Table"
-        Me.Button5.UseVisualStyleBackColor = True
+        Me.Drop.Location = New System.Drawing.Point(484, 307)
+        Me.Drop.Name = "Drop"
+        Me.Drop.Size = New System.Drawing.Size(94, 29)
+        Me.Drop.TabIndex = 12
+        Me.Drop.Text = "Drop Table"
+        Me.Drop.UseVisualStyleBackColor = True
         '
-        'Button4
+        'Delete
         '
-        Me.Button4.Location = New System.Drawing.Point(372, 307)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(94, 29)
-        Me.Button4.TabIndex = 11
-        Me.Button4.Text = "Delete Data"
-        Me.Button4.UseVisualStyleBackColor = True
+        Me.Delete.Location = New System.Drawing.Point(372, 307)
+        Me.Delete.Name = "Delete"
+        Me.Delete.Size = New System.Drawing.Size(94, 29)
+        Me.Delete.TabIndex = 11
+        Me.Delete.Text = "Delete Data"
+        Me.Delete.UseVisualStyleBackColor = True
         '
-        'Button3
+        'Update
         '
-        Me.Button3.Location = New System.Drawing.Point(258, 307)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(94, 29)
-        Me.Button3.TabIndex = 10
-        Me.Button3.Text = "Update Data"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.Update.Location = New System.Drawing.Point(258, 307)
+        Me.Update.Name = "Update"
+        Me.Update.Size = New System.Drawing.Size(94, 29)
+        Me.Update.TabIndex = 10
+        Me.Update.Text = "Update Data"
+        Me.Update.UseVisualStyleBackColor = True
         '
         'Insert
         '
@@ -181,25 +184,37 @@ Partial Class Patient
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Name"
         '
+        'DataGridView1
+        '
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Location = New System.Drawing.Point(711, 0)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.RowHeadersWidth = 51
+        Me.DataGridView1.RowTemplate.Height = 29
+        Me.DataGridView1.Size = New System.Drawing.Size(571, 498)
+        Me.DataGridView1.TabIndex = 14
+        '
         'Patient
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1294, 510)
+        Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "Patient"
         Me.Text = "PatientInformation"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents Button6 As Button
-    Friend WithEvents Button5 As Button
-    Friend WithEvents Button4 As Button
-    Friend WithEvents Button3 As Button
+    Friend WithEvents Search As Button
+    Friend WithEvents Drop As Button
+    Friend WithEvents Delete As Button
+    Friend WithEvents Update As Button
     Friend WithEvents Insert As Button
     Friend WithEvents Button1 As Button
     Friend WithEvents txtSearch As TextBox
@@ -210,4 +225,6 @@ Partial Class Patient
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
+    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
 End Class
